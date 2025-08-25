@@ -1,21 +1,21 @@
-# Importa la clase Flask de la biblioteca flask
-from flask import Flask
+from flask import Flask, render_template
 
-# Crea una instancia de la clase Flask
 app = Flask(__name__)
 
-# Define una ruta para la URL principal ('/')
 @app.route('/')
 def inicio():
-    """ Maneja las solicitudes a la URL principal y devuelve un mensaje de bienvenida. """
-    return '¡Hola! Esta es mi aplicación Flask.'
+    """Maneja las solicitudes a la URL principal y renderiza la plantilla index.html."""
+    return render_template('index.html')
 
-# Define la ruta para un usuario con un nombre personalizado
 @app.route('/usuario/<nombre>')
 def usuario(nombre):
-    return f'¡Bienvenido, {nombre}!'
+    """Maneja las solicitudes a la URL /usuario/<nombre> y renderiza una plantilla con el nombre."""
+    return render_template('index.html', nombre=nombre)
 
-# Este bloque asegura que la aplicación se ejecute solo si el script se ejecuta directamente
+@app.route('/acerca')
+def acerca():
+    """Maneja las solicitudes a la URL /acerca y renderiza la plantilla about.html."""
+    return render_template('about.html')
+
 if __name__ == '__main__':
-    # Inicia el servidor de desarrollo en modo de depuración
     app.run(debug=True)

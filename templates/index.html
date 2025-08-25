@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h1>¡Hola! Esta es mi aplicación Flask.</h1>
+    {% if nombre %}
+        <p>¡Bienvenido, {{ nombre }}!</p>
+    {% else %}
+        <p>Bienvenido al sitio. Ingresa tu nombre en la URL (ejemplo: /usuario/Juan).</p>
+    {% endif %}
+{% endblock %}

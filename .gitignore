@@ -38,3 +38,6 @@ Thumbs.db
 # Archivos de dependencias instaladas localmente
 site-packages/
 .fake
+
+# ruta para activar el entorno 
+# C:\Users\ll M ll\Documents\c#\Flask>.venv\Scripts\activate
